@@ -1,0 +1,7 @@
+23:43:49.305 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Try send message...
+23:43:49.345 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - CLIENT_ACKNOWLEDGE
+23:43:49.391 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Message send successfully.
+23:43:49.399 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Try reading message...
+23:43:49.399 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - AUTO_ACKNOWLEDGE
+23:43:49.412 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Receive message: Hello, how are you?
+23:43:49.420 [main] INFO  com.tander.jms.JmsApplication - Lead time: 1046 ms

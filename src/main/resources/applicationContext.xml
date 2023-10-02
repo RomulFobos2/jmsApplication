@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="connectionFactoryBean"
+          class="org.apache.activemq.ActiveMQConnectionFactory">
+        <!--        <constructor-arg value="vm://localhost?create=true"/>-->
+        <constructor-arg value="${spring.activemq.user}"/>
+        <constructor-arg value="${spring.activemq.password}"/>
+        <constructor-arg value="${spring.activemq.broker-url}"/>
+    </bean>
+
+    <bean id="activeMQConnectorBean" class="com.tander.jms.connector.ActiveMQConnectorBean">
+        <constructor-arg name="connectionFactory" ref="connectionFactoryBean"/>
+    </bean>
+
+    <bean id="producerMessageServiceBean"
+          class="com.tander.jms.service.ProducerMessageServiceBean">
+        <constructor-arg name="activeMQConnectorBean" ref="activeMQConnectorBean"/>
+        <constructor-arg value="${spring.activemq.queue}"/>
+        <constructor-arg value="${producer.isTransaction}" type="java.lang.Boolean"/>
+        <constructor-arg value="${producer.isPersistent}" type="java.lang.Boolean"/>
+        <constructor-arg value="${producer.sessionMode}" type="java.lang.Integer"/>
+        <constructor-arg value="${producer.isQueue}" type="java.lang.Boolean"/>
+    </bean>
+
+    <bean id="consumerMessageServiceBean"
+          class="com.tander.jms.service.ConsumerMessageServiceBean">
+        <constructor-arg name="activeMQConnectorBean" ref="activeMQConnectorBean"/>
+        <constructor-arg value="${spring.activemq.queue}"/>
+        <constructor-arg value="${consumer.isTransaction}" type="java.lang.Boolean"/>
+        <constructor-arg value="${consumer.sessionMode}" type="java.lang.Integer"/>
+        <constructor-arg value="${consumer.isQueue}" type="java.lang.Boolean"/>
+    </bean>
+
+    <bean id="messageServiceBean"
+          class="com.tander.jms.service.MessageServiceBean">
+        <constructor-arg value="${text.message}"/>
+    </bean>
+</beans>
