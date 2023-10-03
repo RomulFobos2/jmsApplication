@@ -1,0 +1,31 @@
+10:02:25.033 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Try send message (Persistent: true)...
+10:02:25.085 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - AUTO_ACKNOWLEDGE
+10:02:25.153 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Message send successfully.
+10:02:25.161 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Try reading message...
+10:02:25.162 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - AUTO_ACKNOWLEDGE
+10:02:25.183 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Receive message: Hello, how are you?
+10:02:25.193 [main] INFO  com.tander.jms.JmsApplication - Lead time: 1178 ms
+
+10:03:20.950 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Try send message (Persistent: true)...
+10:03:20.994 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - CLIENT_ACKNOWLEDGE
+10:03:21.035 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Message send successfully.
+10:03:21.045 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Try reading message...
+10:03:21.045 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - CLIENT_ACKNOWLEDGE
+10:03:21.060 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Receive message: Hello, how are you?
+10:03:21.068 [main] INFO  com.tander.jms.JmsApplication - Lead time: 1024 ms
+
+10:04:30.274 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Try send message (Persistent: true)...
+10:04:30.321 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - DUPS_OK_ACKNOWLEDGE
+10:04:30.369 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Message send successfully.
+10:04:30.376 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Try reading message...
+10:04:30.376 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - false, SessionMode - DUPS_OK_ACKNOWLEDGE
+10:04:30.389 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Receive message: Hello, how are you?
+10:04:30.398 [main] INFO  com.tander.jms.JmsApplication - Lead time: 1122 ms
+
+10:05:02.549 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Try send message (Persistent: true)...
+10:05:02.588 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - true, SessionMode - SESSION_TRANSACTED
+10:05:02.604 [main] INFO  c.t.j.s.ProducerMessageServiceBean - Message send successfully.
+10:05:02.687 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Try reading message...
+10:05:02.688 [main] INFO  c.t.j.c.ActiveMQConnectorBean - Info about session: Transaction - true, SessionMode - SESSION_TRANSACTED
+10:05:02.700 [main] INFO  c.t.j.s.ConsumerMessageServiceBean - Receive message: Hello, how are you?
+10:05:02.737 [main] INFO  com.tander.jms.JmsApplication - Lead time: 1137 ms

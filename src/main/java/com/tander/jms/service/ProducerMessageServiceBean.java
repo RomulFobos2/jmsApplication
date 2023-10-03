@@ -25,7 +25,7 @@ public class ProducerMessageServiceBean {
     Boolean isQueue;
 
     public void sendMessageToBroker(String message) {
-        logger.info("Try send message...");
+        logger.info("Try send message (Persistent: " + isPersistent + ")...");
         Session session = null;
         MessageProducer messageProducer = null;
         try {

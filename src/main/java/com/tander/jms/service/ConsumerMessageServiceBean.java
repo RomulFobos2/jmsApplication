@@ -80,7 +80,7 @@ public class ConsumerMessageServiceBean{
             } else {
                 logger.error("Unsupported message received.");
             }
-            if (sessionMode == Session.CLIENT_ACKNOWLEDGE) {
+            if (sessionMode == Session.CLIENT_ACKNOWLEDGE | sessionMode == Session.DUPS_OK_ACKNOWLEDGE) {
                 message.acknowledge();
             }
         } catch (JMSException e) {
